@@ -716,3 +716,81 @@ main h2 {
     margin: 2rem 0;
   }
 }
+
+.timeCardText {
+  font-size: 0.9pc;
+  text-align: right;
+  margin-bottom: 1pc;
+}
+
+.nameCardText {
+  font-size: 2pc;
+  margin-bottom: .5pc;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  font-weight: 300;
+  margin-bottom: 1pc;
+  color: white;
+  min-height: 10pc;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position-y: center;
+  background-size: auto 115%;
+
+}
+
+.thumb-down-button {
+  padding: 0.5pc;
+  margin-left: 0.5pc;
+  background-color: #FBBD4A;
+}
+
+.thumb-up-button {
+  padding: 0.5pc;
+  margin-left: 0.5pc;
+  background-color: #3CBBB4;
+}
+
+.thumb-up-button img {
+  width: 1.4pc;
+}
+
+.thumb-down-button img {
+  width: 1.4pc;
+}
+
+.buttonVote {
+  padding: 0 2pc;
+  background-color: #000000;
+  opacity: 0.7;
+  margin-left: 0.5pc;
+  color: white;
+  border-color: white;
+}
+
+.thumb-show {
+  height: 100%;
+  position: relative;
+}
+
+.thumb-down {
+  position: absolute;
+  top: 10%;
+  right: 2pc;
+  font-size: 1.7pc;
+  font-weight: 400;
+}
+
+.thumb-up {
+  position: absolute;
+  top: 10%;
+  left: 2pc;
+  font-size: 1.7pc;
+  font-weight: 400;
+}

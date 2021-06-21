@@ -113,6 +113,48 @@
         </div>
       </div>
     </div>
+    <ng-container *ngFor="let personajeData of data">
+      <div class="card"
+           [style]="'background-image: linear-gradient(to right, rgba(0, 0, 0, 0.01), rgba(136, 136, 136, 1), rgba(136, 136, 136, 1), rgba(102, 102, 102, 1), rgba(136, 136, 136, 1), rgba(51, 51, 51, 0.6)), url(\'../assets/img/kanye.png\')'">
+        <div class="row">
+          <div class="col-2" style="position: relative;">
+            <div style="position: absolute; top: 0; left: 7px;" class="thumb-down-button">
+              <img src="assets/img/thumbs-down.svg" style="width: 1.4pc">
+            </div>
+          </div>
+          <div class="col-6" style="padding-top: .5pc">
+            <p class="nameCardText">{{personajeData.name}}</p>
+            <p style="margin-bottom: 4pc">{{personajeData.description}}</p>
+          </div>
+          <div class="col-3" style="padding: 0.5pc">
+            <p class="timeCardText">1 month ago in {{personajeData.category}}</p>
+            <div style="display: flex; flex-direction: row-reverse;">
+              <button class="buttonVote">Vote Now</button>
+              <div class="thumb-down-button">
+                <img src="assets/img/thumbs-down.svg" style="width: 1.4pc">
+              </div>
+              <div class="thumb-up-button">
+                <img src="assets/img/thumbs-up.svg" style="width: 1.4pc">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="position: absolute; bottom: 0; width: 100%; height: 30%; display: flex">
+          <div style="background-color: rgba(60, 187, 180, 0.6); width: 25.5%" class="thumb-show">
+            <div class="thumb-up">
+              <img src="assets/img/thumbs-up.svg" style="width: 1.4pc">
+              25.5%
+            </div>
+          </div>
+          <div style="background-color: rgba(249,173,29,0.5); width: 74.5%" class="thumb-show">
+            <div class="thumb-down">
+              74.5%
+              <img src="assets/img/thumbs-down.svg" style="width: 1.4pc; height: 50%; margin: auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </main>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
     <img
