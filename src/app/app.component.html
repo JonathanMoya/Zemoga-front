@@ -101,10 +101,11 @@
   </aside>
   <main role="main">
     <div class="row">
-      <div class="col">
+      <div class="col-sm">
         <h2>Previous Rulings</h2>
       </div>
       <div class="col" style="">
+        <!--    Filter top rigth    -->
         <div id="filterBox">
           <div class="dropdown">
             <span>{{styleCard}}</span>
@@ -119,6 +120,7 @@
 
       </div>
     </div>
+    <!--Grid or list cards-->
     <section id="webView">
       <ng-container [ngSwitch]="styleCard">
         <ng-container *ngSwitchCase="'List'">
@@ -135,6 +137,7 @@
         </ng-container>
       </ng-container>
     </section>
+    <!--Cards in mobile-->
     <div id='cardMobileContainer'>
       <ng-container *ngFor="let personajeData of data">
         <div class='cardMobile'>

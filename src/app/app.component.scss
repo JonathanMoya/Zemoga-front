@@ -727,6 +727,8 @@ p {
   margin: 0;
 }
 
+
+// Dropdown to work with hover
 .dropdown {
   position: relative;
   padding: .5pc 0 .5pc 3pc;
@@ -770,6 +772,7 @@ p {
   display: block;
 }
 
+// The cards with grid in desktop
 .rowGrid {
   display: grid;
   grid-gap: 10px;
@@ -777,33 +780,7 @@ p {
   margin-bottom: 2pc;
 }
 
-#cardMobileContainer {
-  display: none;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: auto;
-}
-
-@media (max-width: 1007px) {
-  .rowGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  #filterBox {
-    display: none;
-  }
-
-  #webView {
-    display: none;
-  }
-
-  #cardMobileContainer {
-    display: flex;
-  }
-}
-
+//Cards mobile
 .cardMobile {
   margin: 1pc;
   width: 500pc;
@@ -816,133 +793,31 @@ p {
   text-align: center;
 }
 
-.cardGrid {
-  margin-left: 1pc;
-  position: relative;
-  width: 100%;
-  padding-top: 100%; /* 1:1 Aspect Ratio */
-  font-weight: 300;
-  margin-bottom: 1pc;
-  color: white;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-size: auto 100%;
+#cardMobileContainer {
+  display: none;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: auto;
 }
 
-.textCard {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  font-size: 20px;
-  color: white;
-  display: flex;
-  flex-direction: column-reverse;
-  margin-bottom: 13%;
-  margin-right: 1pc;
-  margin-left: 3pc;
+@media (max-width: 1007px) {
+  // The cards with grid in tablet
+  .rowGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.buttonVote {
-  &:active {
-    opacity: 0.5;
+@media (max-width: 600px) {
+  // Mobile config
+  #filterBox {
+    display: none;
   }
 
-  padding: 0 2pc;
-  background-color: #000000;
-  opacity: 0.7;
-  margin-left: 0.5pc;
-  color: white;
-  border: 2px solid white;
-}
-
-.thumb-down-button {
-  padding: 0.5pc;
-  margin-left: 0.5pc;
-  background-color: #FBBD4A;
-}
-
-button.thumb-down-button {
-  &:focus {
-    border: 2px solid white;
+  #webView {
+    display: none;
   }
 
-  border: 2px solid transparent;
-}
-
-button.thumb-up-button {
-  &:focus {
-    border: 2px solid white;
+  #cardMobileContainer {
+    display: flex;
   }
-
-  border: 2px solid transparent;
 }
-
-.thumb-up-button {
-  padding: 0.5pc;
-  margin-left: 0.5pc;
-  background-color: #3CBBB4;
-}
-
-.thumb-up-button img {
-  width: 1.4pc;
-}
-
-.thumb-down-button img {
-  width: 1.4pc;
-}
-
-.timeCardText {
-  font-size: 0.9pc;
-  text-align: right;
-  margin-bottom: 1pc;
-}
-
-.nameCardText {
-  font-size: 2pc;
-  margin-bottom: .5pc;
-  font-weight: 400;
-}
-
-.show-percentage-grid {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 10%;
-  display: flex
-}
-
-.thumb-down-grid {
-  & img {
-    width: 1pc;
-    height: 50%;
-    margin: auto
-  }
-
-  position: absolute;
-  top: 10%;
-  right: 1pc;
-  font-size: 1.4pc;
-  font-weight: 300;
-}
-
-.thumb-up-grid {
-  & img {
-    width: 1pc;
-    height: 50%;
-    margin: auto
-  }
-
-  position: absolute;
-  top: 10%;
-  left: 1pc;
-  font-size: 1.4pc;
-  font-weight: 300;
-}
-
-
-
-
-

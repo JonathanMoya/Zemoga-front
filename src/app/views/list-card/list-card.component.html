@@ -1,6 +1,8 @@
+<!--To change the image in background of people-->
 <div class="card"
      [style]="'background-image: linear-gradient(to right, rgba(0, 0, 0, 0.01), rgba(136, 136, 136, 1), rgba(136, 136, 136, 1), rgba(102, 102, 102, 1), rgba(136, 136, 136, 1), rgba(51, 51, 51, 0.6)), url(\'../assets/img/people/'+ personajeData.picture+'\')'">
   <div class="row">
+    <!--    Change the thumb on left-->
     <div class="col-2" style="position: relative;">
       <div style="position: absolute; top: 0; left: 7px;"
            [class]="'thumb-' + (getPercentege(personajeData, 'positive') >= 50 ? 'up' : 'down') +'-button'">
@@ -9,6 +11,7 @@
           style="width: 1.4pc" alt="vote down">
       </div>
     </div>
+    <!--    Data inside the card as name, description, etc.-->
     <div class="col-6" style="padding-top: .5pc">
       <p class="nameCardText">{{personajeData.name}}</p>
       <p style="margin-bottom: 4pc">{{personajeData.description}}</p>
@@ -17,10 +20,12 @@
       <p class="timeCardText">{{differenceTime(personajeData.lastUpdated)}} ago
         in {{personajeData.category}}</p>
       <div style="display: flex; flex-direction: row-reverse;">
+        <!--     Change the button to vote and their functionality-->
         <button class="buttonVote" (click)="votar()" *ngIf="!stateVote">Vote Now</button>
         <button class="buttonVote" (click)="stateVote=false; thumbSelect = ''" *ngIf="stateVote" style="height: 2.5pc;">
           Vote Again
         </button>
+        <!--      Hide or show the thumb buttons-->
         <button class="thumb-down-button" *ngIf="!stateVote" (click)="thumbSelect='negative'">
           <img src="../../../assets/img/thumbs-down.svg" style="width: 1.4pc" alt="vote down">
         </button>
@@ -30,6 +35,7 @@
       </div>
     </div>
   </div>
+  <!--  Percentage in bottom with colors-->
   <div class="show-percentage">
     <div style="background-color: rgba(60, 187, 180, 0.6);" class="thumb-show"
          [ngStyle]="{width: getPercentege(personajeData, 'positive') + '%'}">

@@ -1,17 +1,22 @@
+<!--To change the image in background of people-->
 <div class="cardGrid" [class.mobile]="mobile"
      [style]="'background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0,0,0,0.6)), url(\'../assets/img/people/'+ personajeData.picture+'\')'">
   <div class="textCard">
+    <!--    Change the thumb on left-->
     <div style="position: absolute; top: 45%; left: -3pc; margin: 0"
          [class]="'thumb-' + (getPercentege(personajeData, 'positive') >= 50 ? 'up' : 'down') +'-button'">
       <img
         [src]="'assets/img/thumbs-' + (getPercentege(personajeData, 'positive') >= 50 ? 'up' : 'down')  + '.svg'"
         style="width: 1pc" alt="vote down">
     </div>
+    <!--    Data inside the card as name, description, etc.-->
     <div style="display: flex; flex-direction: row-reverse;">
+      <!--     Change the button to vote and their functionality-->
       <button class="buttonVote" (click)="votar()" *ngIf="!stateVote">Vote Now</button>
       <button class="buttonVote" (click)="stateVote=false; thumbSelect = ''" *ngIf="stateVote" style="height: 2.2pc;">
         Vote Again
       </button>
+      <!--      Hide or show the thumb buttons-->
       <button class="thumb-down-button" *ngIf="!stateVote" (click)="thumbSelect='negative'">
         <img src="../../../assets/img/thumbs-down.svg" style="width: 1pc" alt="vote down">
       </button>
@@ -24,6 +29,7 @@
     <p style="font-size: 1pc">{{personajeData.description}}</p>
     <p class="nameCardText" style="text-align: left">{{personajeData.name}}</p>
   </div>
+  <!--  Percentage in bottom with colors-->
   <div class="show-percentage-grid">
     <div style="background-color: rgba(60, 187, 180, 0.6);" class="thumb-show"
          [ngStyle]="{width: getPercentege(personajeData, 'positive') + '%'}">
