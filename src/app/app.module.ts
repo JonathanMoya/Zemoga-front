@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { GridCardComponent } from './grid-card/grid-card.component';
-import { ListCardComponent } from './list-card/list-card.component';
+import { GridCardComponent } from './views/grid-card/grid-card.component';
+import { ListCardComponent } from './views/list-card/list-card.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ListCardComponent } from './list-card/list-card.component';
     ListCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

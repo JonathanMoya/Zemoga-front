@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-list-card',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ListCardComponent implements OnInit {
 
-  constructor() {
+  constructor(private serviceHttp: DataService) {
   }
 
   @Input() personajeData: any = '';
@@ -38,6 +39,8 @@ export class ListCardComponent implements OnInit {
       console.log(this.personajeData);
       this.personajeData.votes[this.thumbSelect]++;
       this.stateVote = true;
+      this.serviceHttp.updateData({name: this.personajeData.name, type: this.thumbSelect}).subscribe(res => {
+      });
     }
   }
 }

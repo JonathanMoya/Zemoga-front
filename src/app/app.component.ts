@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-// @ts-ignore
-import * as dataJson from './data.json';
+import {DataService} from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +7,15 @@ import * as dataJson from './data.json';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  data = dataJson.default.data;
+  data = [];
   styleCard = 'List';
 
+  constructor(private serviceHttp: DataService) {
+  }
+
   ngOnInit(): void {
-    console.log(dataJson.default.data);
+    this.serviceHttp.getAllData().subscribe(res => {
+      this.data = res;
+    });
   }
 }

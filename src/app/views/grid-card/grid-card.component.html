@@ -13,10 +13,10 @@
         Vote Again
       </button>
       <button class="thumb-down-button" *ngIf="!stateVote" (click)="thumbSelect='negative'">
-        <img src="assets/img/thumbs-down.svg" style="width: 1pc" alt="vote down">
+        <img src="../../../assets/img/thumbs-down.svg" style="width: 1pc" alt="vote down">
       </button>
       <button class="thumb-up-button" *ngIf="!stateVote" (click)="thumbSelect='positive'">
-        <img src="assets/img/thumbs-up.svg" style="width: 1pc" alt="vote up">
+        <img src="../../../assets/img/thumbs-up.svg" style="width: 1pc" alt="vote up">
       </button>
     </div>
     <p class="timeCardText">{{differenceTime(personajeData.lastUpdated)}} ago
@@ -28,7 +28,7 @@
     <div style="background-color: rgba(60, 187, 180, 0.6);" class="thumb-show"
          [ngStyle]="{width: getPercentege(personajeData, 'positive') + '%'}">
       <div class="thumb-up-grid">
-        <img src="assets/img/thumbs-up.svg">
+        <img src="../../../assets/img/thumbs-up.svg">
         {{getPercentege(personajeData, 'positive')}}%
       </div>
     </div>
@@ -36,7 +36,7 @@
          [ngStyle]="{width: getPercentege(personajeData, 'negative') + '%'}" class="thumb-show">
       <div class="thumb-down-grid">
         {{getPercentege(personajeData, 'negative')}}%
-        <img src="assets/img/thumbs-down.svg">
+        <img src="../../../assets/img/thumbs-down.svg">
       </div>
     </div>
   </div>
