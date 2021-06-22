@@ -1,23 +1,25 @@
-import {Component, OnInit} from '@angular/core';
-// @ts-ignore
-import * as dataJson from './data.json';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-grid-card',
+  templateUrl: './grid-card.component.html',
+  styleUrls: ['./grid-card.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'PruebaFront';
-  data = dataJson.default.data;
-  styleCard = 'Grid';
+export class GridCardComponent implements OnInit {
+
+  constructor() {
+  }
+
+  @Input() personajeData: any = '';
+  @Input() mobile = false;
   thumbSelect = '';
   stateVote = false;
+
   ngOnInit(): void {
-    console.log(dataJson.default.data);
   }
 
   getPercentege = (data, type: string) => ((data.votes[type] / (data.votes.positive + data.votes.negative)) * 100).toFixed(1);
+
 
   differenceTime(date: Date): string {
     const diffTime = new Date().getTime() - new Date(date).getTime();
@@ -39,5 +41,4 @@ export class AppComponent implements OnInit {
       this.stateVote = true;
     }
   }
-
 }

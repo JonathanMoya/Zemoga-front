@@ -1,0 +1,49 @@
+<div class="card"
+     [style]="'background-image: linear-gradient(to right, rgba(0, 0, 0, 0.01), rgba(136, 136, 136, 1), rgba(136, 136, 136, 1), rgba(102, 102, 102, 1), rgba(136, 136, 136, 1), rgba(51, 51, 51, 0.6)), url(\'../assets/img/people/'+ personajeData.picture+'\')'">
+  <div class="row">
+    <div class="col-2" style="position: relative;">
+      <div style="position: absolute; top: 0; left: 7px;"
+           [class]="'thumb-' + (getPercentege(personajeData, 'positive') >= 50 ? 'up' : 'down') +'-button'">
+        <img
+          [src]="'assets/img/thumbs-' + (getPercentege(personajeData, 'positive') >= 50 ? 'up' : 'down')  + '.svg'"
+          style="width: 1.4pc" alt="vote down">
+      </div>
+    </div>
+    <div class="col-6" style="padding-top: .5pc">
+      <p class="nameCardText">{{personajeData.name}}</p>
+      <p style="margin-bottom: 4pc">{{personajeData.description}}</p>
+    </div>
+    <div class="col-3" style="padding: 0.5pc">
+      <p class="timeCardText">{{differenceTime(personajeData.lastUpdated)}} ago
+        in {{personajeData.category}}</p>
+      <div style="display: flex; flex-direction: row-reverse;">
+        <button class="buttonVote" (click)="votar()" *ngIf="!stateVote">Vote Now</button>
+        <button class="buttonVote" (click)="stateVote=false; thumbSelect = ''" *ngIf="stateVote" style="height: 2.5pc;">
+          Vote Again
+        </button>
+        <button class="thumb-down-button" *ngIf="!stateVote" (click)="thumbSelect='negative'">
+          <img src="assets/img/thumbs-down.svg" style="width: 1.4pc" alt="vote down">
+        </button>
+        <button class="thumb-up-button" *ngIf="!stateVote" (click)="thumbSelect='positive'">
+          <img src="assets/img/thumbs-up.svg" style="width: 1.4pc" alt="vote down">
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="show-percentage">
+    <div style="background-color: rgba(60, 187, 180, 0.6);" class="thumb-show"
+         [ngStyle]="{width: getPercentege(personajeData, 'positive') + '%'}">
+      <div class="thumb-up">
+        <img src="assets/img/thumbs-up.svg" style="width: 1.4pc" alt="thumb up">
+        {{getPercentege(personajeData, 'positive')}}%
+      </div>
+    </div>
+    <div style="background-color: rgba(249,173,29,0.5);"
+         [ngStyle]="{width: getPercentege(personajeData, 'negative') + '%'}" class="thumb-show">
+      <div class="thumb-down">
+        {{getPercentege(personajeData, 'negative')}}%
+        <img src="assets/img/thumbs-down.svg" style="width: 1.4pc; height: 50%; margin: auto">
+      </div>
+    </div>
+  </div>
+</div>
