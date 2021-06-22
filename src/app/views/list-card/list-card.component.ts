@@ -18,7 +18,7 @@ export class ListCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getPercentege = (data, type: string) => ((data.votes[type] / (data.votes.positive + data.votes.negative)) * 100).toFixed(1);
+  getPercentege = (data, type: string) => +((data.votes[type] / (data.votes.positive + data.votes.negative)) * 100).toFixed(1);
 
 
   differenceTime(date: Date): string {
