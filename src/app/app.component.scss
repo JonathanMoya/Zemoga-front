@@ -777,6 +777,13 @@ p {
   margin-bottom: 2pc;
 }
 
+#cardMobileContainer {
+  display: none;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: auto;
+}
+
 @media (max-width: 1007px) {
   .rowGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -787,22 +794,15 @@ p {
   #filterBox {
     display: none;
   }
+
+  #webView {
+    display: none;
+  }
+
+  #cardMobileContainer {
+    display: flex;
+  }
 }
-
-//.cardMobile {
-//  width: 10pc;
-//  height: 10pc;
-//  background-color: red;
-//  margin: 1pc;
-//}
-
-.cardMobileContainer {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: auto;
-}
-
 
 .cardMobile {
   margin: 1pc;
@@ -810,6 +810,7 @@ p {
 }
 
 .cardMobile .cardMobileBody {
+  margin-right: 1pc;
   background-color: #598AC6;
   width: 300px;
   text-align: center;

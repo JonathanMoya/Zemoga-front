@@ -119,31 +119,23 @@
 
       </div>
     </div>
-        <ng-container *ngIf="styleCard==='List'">
+    <section id="webView">
+      <ng-container [ngSwitch]="styleCard">
+        <ng-container *ngSwitchCase="'List'">
           <ng-container *ngFor="let personajeData of data">
             <app-list-card [personajeData]="personajeData"></app-list-card>
           </ng-container>
         </ng-container>
-    <ng-container *ngIf="styleCard==='Grid'">
-      <div class="rowGrid">
-        <ng-container *ngFor="let personajeData of data; let i = index;">
-          <app-grid-card [personajeData]="personajeData"></app-grid-card>
+        <ng-container *ngSwitchCase="'Grid'">
+          <div class="rowGrid">
+            <ng-container *ngFor="let personajeData of data; let i = index;">
+              <app-grid-card [personajeData]="personajeData"></app-grid-card>
+            </ng-container>
+          </div>
         </ng-container>
-      </div>
-    </ng-container>
-    <!--    <div class="cardMobileContainer">-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--      <div class="cardMobile"></div>-->
-    <!--    </div>-->
-
-
-    <div class='cardMobileContainer'>
+      </ng-container>
+    </section>
+    <div id='cardMobileContainer'>
       <ng-container *ngFor="let personajeData of data">
         <div class='cardMobile'>
           <div class='cardMobileBody'>
@@ -151,22 +143,6 @@
           </div>
         </div>
       </ng-container>
-<!--      <div class='cardMobile'>-->
-      <!--        <div class='cardMobileBody'>Item 2</div>-->
-      <!--      </div>-->
-      <!--      <div class='cardMobile'>-->
-      <!--        <div class='cardMobileBody'>Item 3</div>-->
-      <!--      </div>-->
-      <!--      <div class='cardMobile'>-->
-      <!--        <div class='cardMobileBody'>Item 3</div>-->
-      <!--      </div>-->
-      <!--      <div class='cardMobile'>-->
-      <!--        <div class='cardMobileBody'>Item 3</div>-->
-      <!--      </div>-->
-    </div>
-
-    <div class='d-none d-lg-block '>
-      <p>Resize screen for horizontal scroll</p>
     </div>
   </main>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
