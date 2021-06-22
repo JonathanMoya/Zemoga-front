@@ -28,9 +28,9 @@ hr[role="separator"] {
   justify-content: space-between;
   padding: 0 1rem;
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, .8) 0%,
-    rgba(0, 0, 0, 0) 80%
+      to bottom,
+      rgba(0, 0, 0, .8) 0%,
+      rgba(0, 0, 0, 0) 80%
   );
 }
 
@@ -177,8 +177,8 @@ hr[role="separator"] {
   width: 140%;
   height: 140%;
   background: center no-repeat linear-gradient(
-    var(--color-dark-background),
-    var(--color-dark-background)
+      var(--color-dark-background),
+      var(--color-dark-background)
   ),
   -25vw 0/160vw no-repeat url('../assets/img/pope-francis.png');
   filter: blur(1rem);
@@ -352,10 +352,15 @@ hr[role="separator"] {
 
 #filterSelect {
   padding: .5pc 2.5pc;
-  border-radius: 0;
-  border-width: 2px;
-  border-color: black;
+  border: 2px black solid;
+  height: 40px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 1em;
 }
+
 
 #filterBox {
   float: right;
@@ -742,13 +747,28 @@ p {
   position: relative;
   background-position-y: center;
   background-size: auto 115%;
-
 }
 
 .thumb-down-button {
   padding: 0.5pc;
   margin-left: 0.5pc;
   background-color: #FBBD4A;
+}
+
+button.thumb-down-button {
+  &:focus {
+    border: 2px solid white;
+  }
+
+  border: 2px solid transparent;
+}
+
+button.thumb-up-button {
+  &:focus {
+    border: 2px solid white;
+  }
+
+  border: 2px solid transparent;
 }
 
 .thumb-up-button {
@@ -766,12 +786,16 @@ p {
 }
 
 .buttonVote {
+  &:active {
+    opacity: 0.5;
+  }
+
   padding: 0 2pc;
   background-color: #000000;
   opacity: 0.7;
   margin-left: 0.5pc;
   color: white;
-  border-color: white;
+  border: 2px solid white;
 }
 
 .thumb-show {
@@ -793,4 +817,95 @@ p {
   left: 2pc;
   font-size: 1.7pc;
   font-weight: 400;
+}
+
+.show-percentage {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+  display: flex
+}
+
+.show-percentage-grid {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  display: flex
+}
+
+.dropdown {
+  position: relative;
+  padding: .5pc 0 .5pc 3pc;
+  font-size: 0.8pc;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid black;
+  width: 7pc;
+}
+
+.dropdown:after {
+  display: inline-block;
+  margin-left: 3pc;
+  margin-right: 1pc;
+  vertical-align: .255em;
+  content: "";
+  border-top: .5em solid;
+  border-right: .5em solid transparent;
+  border-bottom: 0;
+  border-left: .5em solid transparent;
+}
+
+.dropdown-content {
+  width: 7pc;
+  margin-left: -3.1pc;
+  padding: .5pc 1.5pc .5pc 1.5pc;
+  display: none;
+  text-align: center;
+  margin-top: 0.5pc;
+  position: absolute;
+  border: 2px solid black;
+  z-index: 1;
+  background-color: white;
+}
+
+.dropdown-content:nth-child(2n) {
+  top: 3.6pc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.rowGrid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 2pc;
+}
+
+.cardGrid {
+  background-color: red;
+  margin-left: 1pc;
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  font-weight: 300;
+  margin-bottom: 1pc;
+  color: white;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: auto 100%;
+}
+
+.textCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 20px;
+  color: white;
 }
